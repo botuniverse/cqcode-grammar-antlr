@@ -14,4 +14,7 @@ cqcode
 cqcode_params: cqcode_param+;
 
 cqcode_param
-            : CQCodeParamSplit CQCodeParamKey (CQCodeParamAssign CQCodeParamValue)?;
+    : (CQCodeParamSplit | CQCodeParamSplitWithoutValue) CQCodeParamKey
+    | (CQCodeParamSplit | CQCodeParamSplitWithoutValue) CQCodeParamKey CQCodeParamAssign
+    | (CQCodeParamSplit | CQCodeParamSplitWithoutValue) CQCodeParamKey CQCodeParamAssign CQCodeParamValue
+    ;

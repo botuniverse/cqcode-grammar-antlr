@@ -27,6 +27,8 @@ CQCodeParamAssign : '=' -> pushMode(CQCODE_PARAM_PENDING);
 
 CQCodeCloseWithoutValue: ']' -> pushMode(DEFAULT_MODE);
 
+CQCodeParamSplitWithoutValue : ',' -> pushMode(CQCODE_PARAM_START);
+
 /**
  *  处理 CQCode 的参数值
  */
